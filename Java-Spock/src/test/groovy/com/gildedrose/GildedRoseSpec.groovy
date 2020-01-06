@@ -198,6 +198,6 @@ class GildedRoseSpec extends Specification {
         then: "the quality is correct"
         app.items[0].name == "Conjured"
         app.items[0].quality == 16
-        app.items[0].sellIn == 6
+        app.items[0].sellIn == -6
     }
 }
