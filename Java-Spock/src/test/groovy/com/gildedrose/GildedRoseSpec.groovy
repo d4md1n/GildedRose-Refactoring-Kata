@@ -171,7 +171,7 @@ class GildedRoseSpec extends Specification {
 
     def "Conjured items update quality"() {
         given: "a conjured item"
-        Item[] items = [new Item("Conjured", 7, 20)]
+        Item[] items = [new Item("Conjured Mana Cake", 7, 20)]
 
         and: "the application with these items"
         GildedRose app = new GildedRose(items)
@@ -180,14 +180,14 @@ class GildedRoseSpec extends Specification {
         app.updateQuality()
 
         then: "the quality is correct"
-        app.items[0].name == "Conjured"
+        app.items[0].name == "Conjured Mana Cake"
         app.items[0].quality == 18
         app.items[0].sellIn == 6
     }
 
     def "Conjured items update quality for negative sellIn"() {
         given: "a conjured item"
-        Item[] items = [new Item("Conjured", -5, 20)]
+        Item[] items = [new Item("Conjured Mana Cake", -5, 20)]
 
         and: "the application with these items"
         GildedRose app = new GildedRose(items)
@@ -196,7 +196,7 @@ class GildedRoseSpec extends Specification {
         app.updateQuality()
 
         then: "the quality is correct"
-        app.items[0].name == "Conjured"
+        app.items[0].name == "Conjured Mana Cake"
         app.items[0].quality == 16
         app.items[0].sellIn == -6
     }
